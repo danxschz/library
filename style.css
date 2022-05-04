@@ -168,7 +168,7 @@ main {
   color: white;
   width: 90px;
   border: none;
-  border-radius: 90px;
+  border-radius: 8px;
   padding: 10px 16px;
   cursor: pointer;
   -ms-grid-column-align: center;
