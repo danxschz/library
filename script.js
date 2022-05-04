@@ -48,7 +48,7 @@ function displayBooks() {
 
     bookPages = document.createElement('div');
     bookPages.classList.add('pages')
-    bookPages.textContent = (book['pages']);
+    bookPages.textContent = (`${book['pages']} pages`);
     bookContainer.appendChild(bookPages);
 
     bookRead = document.createElement('div');
@@ -60,7 +60,7 @@ function displayBooks() {
   }
 }
 
-const submitButton = document.querySelector('.submit');
+const submitButton = document.querySelector('.book-form__submit');
 submitButton.addEventListener('click', () => {
   addBookToLibrary();
   console.log(myLibrary);
@@ -68,3 +68,24 @@ submitButton.addEventListener('click', () => {
   displayBooks();
 });
 
+
+const overlay = document.querySelector(".overlay");
+const addBook = document.querySelector(".add-book");
+const bookForm = document.querySelector(".book-form");
+
+let formOpen = false;
+function toggleForm() {
+  if (formOpen) {
+    bookForm.style.transform = "scale(0)";
+    addBook.style.transform = "rotate(0)";
+    overlay.style.opacity = 0;
+    formOpen = false;
+  } else {
+    bookForm.style.transform = "scale(1)";
+    addBook.style.transform = "rotate(45deg)";
+    overlay.style.opacity = 1;
+    formOpen = true;
+  }
+}
+
+addBook.addEventListener("click", toggleForm);

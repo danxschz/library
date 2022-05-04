@@ -5,27 +5,92 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/92d46d99be.js" crossorigin="anonymous"></script>
   <script src="script.js" defer></script>
   <title>Library</title>
 </head>
 
 <body>
   <div class="main-grid">
-    <h1>Library</h1>
-    
-    <div class="add-book">
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title">
-      <label for="author">Author</label>
-      <input type="text" name="author" id="author">
-      <label for="pages">Number of pages</label>
-      <input type="number" name="pages" id="pages">
-      <label for="read">Read?</label>
-      <input type="checkbox" name="read" id="read">
-      <button type="button" class="submit">Submit</button>
+    <header>
+      <h1>Library</h1>
+    </header>
+
+    <main>
+      <div class="books">
+        <div class="books__book">
+          <div class="book__info">
+            <div class="book__title">One piece</div>
+            <div class="book__author">Juan Oda</div>
+            <div class="book__pages">800 pages</div>
+            <div class="book__read">Not read</div>
+          </div>
+          <div class="book__icons">
+            <i class="fa-brands fa-readme"></i>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+
+        <div class="books__book">
+          <div class="book__info">
+            <div class="book__title">One piece</div>
+            <div class="book__author">Juan Oda</div>
+            <div class="book__pages">800 pages</div>
+            <div class="book__read">Not read</div>
+          </div>
+          <div class="book__icons">
+            <i class="fa-brands fa-readme"></i>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+
+        <div class="books__book">
+          <div class="book__info">
+            <div class="book__title">One piece</div>
+            <div class="book__author">Juan Oda</div>
+            <div class="book__pages">800 pages</div>
+            <div class="book__read">Not read</div>
+          </div>
+          <div class="book__icons">
+            <i class="fa-brands fa-readme"></i>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="overlay"></div>
+    <div class="book-form">
+      <div class="book-form__title">Add book</div>
+
+      <div class="book-form__field">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+      </div>
+
+      <div class="book-form__field">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author">
+      </div>
+
+      <div class="book-form__field">
+        <label for="pages">Number of pages</label>
+        <input type="number" name="pages" id="pages">
+      </div>
+
+      <div class="book-form__checkbox">
+        <label for="read">Have you read it?</label>
+        <input type="checkbox" name="read" id="read">
+      </div> 
+
+      <button type="button" class="book-form__submit">Submit</button>
     </div>
 
-    <div class="books"></div>
+    <button type="button" class="add-book">+</button>
+
+
   </div>
 </body>
 
