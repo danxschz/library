@@ -46,11 +46,34 @@ $neutral: rgb(248, 235, 233);
 
 /* Header */
 header {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
   padding: 32px 8vw;
   background: $pink;
   color: white;
   position: relative;
   box-shadow: 0 4px 4px -4px rgb(167, 167, 167);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+h1 a:hover {
+  color: darken(white, 5%); 
+}
+
+.fa-github {
+  font-size: 1.9rem;
+  transition: transform 0.3s ease-in-out;
+}
+  
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+  opacity: 1;
 }
 
 
