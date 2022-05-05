@@ -105,6 +105,7 @@ main {
       grid-template-rows: 1fr auto;
   padding: 16px;
   height: 220px;
+  max-width: 700px;
   border-radius: 8px;
   background: white;
   color: #c86a6e;
@@ -189,9 +190,9 @@ main {
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 464px;
+  height: 488px;
   width: 300px;
-  margin-top: -232px;
+  margin-top: -244px;
   /* Negative half of height. */
   margin-left: -150px;
   /* Negative half of width. */
@@ -205,6 +206,7 @@ main {
 .book-form__field {
   display: -ms-grid;
   display: grid;
+  gap: 8px;
 }
 
 .book-form__field input {

@@ -180,11 +180,14 @@ addBookButton.addEventListener('click', toggleForm);
 // Submit button
 const submitButton = document.querySelector('.book-form__submit');
 submitButton.addEventListener('click', () => {
+  if (title.value === '' || author.value === '' || pages.value === '') return;
   addBookToLibrary();
   resetInputs();
   clearDisplay();
   displayBooks();
+  toggleForm();
   setReadStatusEvents();
+  setDeleteBookEvents();
 });
 
 
