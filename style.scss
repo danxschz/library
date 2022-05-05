@@ -18,161 +18,171 @@ h1 {
   padding: 0;
 }
 
+button, i {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
 
 /* Variables */
 $pink: rgb(200, 106, 110);
-$neutral : rgb(248, 235, 233);
+$neutral: rgb(248, 235, 233);
 
 
 /* Main grid */
 .main-grid {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr;
 }
 
 
 /* Header */
 header {
-    background: $pink;
-    color: white;
-    padding: 32px 8vw;
-    position: relative;
-    box-shadow: 0 4px 4px -4px rgb(167, 167, 167);
+  padding: 32px 8vw;
+  background: $pink;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 4px -4px rgb(167, 167, 167);
 }
 
 
 /* Main */
 main {
-    display: grid;
-    background: $neutral;
-    padding: 32px 8vw;
+  display: grid;
+  background: $neutral;
+  padding: 32px 8vw;
 }
 
 .books {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
 }
 
 .books__book {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    padding: 16px;
-    height: 220px;
-    border-radius: 8px;
-    background: white;
-    box-shadow: 2px 2px 4px 1px rgb(197, 197, 197);
-    color: $pink;
-    font-size: 1.2rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 16px;
+  height: 220px;
+  border-radius: 8px;
+  background: white;
+  color: $pink;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 4px 1px rgb(197, 197, 197);
 }
 
 .book__info {
-    display: grid;
-    justify-self: center;
-    align-self: center;
-    justify-items: center;
-    gap: 8px;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  justify-items: center;
+  gap: 8px;
 }
 
 .book__title {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .book__icons {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
-    font-size: 1.4rem;
-    justify-self: right;
-    align-self: end;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  font-size: 1.4rem;
+  justify-self: right;
+  align-self: end;
+}
+
+
+/* Book form */
+.add-book {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background: $pink;
+  color: white;
+  font-size: 1.8rem;
+  transition: 0.5s ease;
+}
+  
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease;
 }
 
 .book-form {
-    transform: scale(0);
-    transition: 0.5s ease;
-    display: grid;
-    gap: 32px;
-    background: white;
-    box-shadow: 2px 2px 4px 1px rgb(128, 128, 128);
-    padding: 32px;
-    color: $pink;
-    border-radius: 8px;
-    font-weight: 600;
-    /* Position hack */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 464px;
-    width: 300px;
-    margin-top: -232px; /* Negative half of height. */
-    margin-left: -150px; /* Negative half of width. */
+  display: grid;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 8px;
+  background: white;
+  color: $pink;
+  font-weight: 600;
+  box-shadow: 2px 2px 4px 1px rgb(128, 128, 128);
+  transform: scale(0);
+  transition: 0.5s ease;
+  /* Center fixed element */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 464px;
+  width: 300px;
+  margin-top: -232px; /* Negative half of height. */
+  margin-left: -150px; /* Negative half of width. */
+}
 
+.book-form__heading {
+  justify-self: center;
 }
 
 .book-form__field {
-    display: grid;
-}
+  display: grid;
 
-.book-form__field input {
-    border-radius: 8px;
+  input {
     border: 1px solid gainsboro;
+    border-radius: 8px;
     padding: 8px 16px;
     outline-color: $pink;
+  }
 }
 
 .book-form__checkbox {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: start;
-    gap: 8px;
-    align-items: center;
-    align-content: center;
-    justify-self: center;
-}
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  gap: 8px;
+  align-items: center;
+  justify-self: center;
 
-.book-form__checkbox input {
-    background: $pink;
+  input {
     accent-color: $pink;
-}
-
-.book-form__title {
-    justify-self: center;
+  }
 }
 
 .book-form__submit {
-    background: rgb(200, 106, 110);
-    color: white;
-    width: 90px;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    cursor: pointer;
-    justify-self: center;
+  width: 90px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  justify-self: center;
+  background: $pink;
+  color: white;
 }
-
-.add-book {
-    position: fixed;
-    font-size: 1.8rem;
-    border: none;
-    width: 60px;
-    height: 60px;
-    background: $pink;
-    color: white;
-    border-radius: 50%;
-    bottom: 5%;
-    right: 5%;
-    transition: 0.5s ease;
-}
-
-.overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    pointer-events: none;
-    opacity: 0;
-    transition: 0.5s ease;
-  }

@@ -17,21 +17,33 @@ h1 {
   padding: 0;
 }
 
+button, i {
+  cursor: pointer;
+}
+
+button:hover, i:hover {
+  opacity: 0.9;
+}
+
+button:active, i:active {
+  opacity: 0.8;
+}
+
 /* Variables */
 /* Main grid */
 .main-grid {
-  height: 100vh;
   display: -ms-grid;
   display: grid;
+  height: 100vh;
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
 }
 
 /* Header */
 header {
+  padding: 32px 8vw;
   background: #c86a6e;
   color: white;
-  padding: 32px 8vw;
   position: relative;
   -webkit-box-shadow: 0 4px 4px -4px #a7a7a7;
           box-shadow: 0 4px 4px -4px #a7a7a7;
@@ -62,10 +74,10 @@ main {
   height: 220px;
   border-radius: 8px;
   background: white;
-  -webkit-box-shadow: 2px 2px 4px 1px #c5c5c5;
-          box-shadow: 2px 2px 4px 1px #c5c5c5;
   color: #c86a6e;
   font-size: 1.2rem;
+  -webkit-box-shadow: 2px 2px 4px 1px #c5c5c5;
+          box-shadow: 2px 2px 4px 1px #c5c5c5;
 }
 
 .book__info {
@@ -88,7 +100,7 @@ main {
   display: grid;
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
-  gap: 16px;
+  gap: 24px;
   font-size: 1.4rem;
   -ms-grid-column-align: right;
       justify-self: right;
@@ -96,22 +108,51 @@ main {
       align-self: end;
 }
 
+/* Book form */
+.add-book {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background: #c86a6e;
+  color: white;
+  font-size: 1.8rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
 .book-form {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 8px;
+  background: white;
+  color: #c86a6e;
+  font-weight: 600;
+  -webkit-box-shadow: 2px 2px 4px 1px gray;
+          box-shadow: 2px 2px 4px 1px gray;
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-  display: -ms-grid;
-  display: grid;
-  gap: 32px;
-  background: white;
-  -webkit-box-shadow: 2px 2px 4px 1px gray;
-          box-shadow: 2px 2px 4px 1px gray;
-  padding: 32px;
-  color: #c86a6e;
-  border-radius: 8px;
-  font-weight: 600;
-  /* Position hack */
+  /* Center fixed element */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -123,14 +164,19 @@ main {
   /* Negative half of width. */
 }
 
+.book-form__heading {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 .book-form__field {
   display: -ms-grid;
   display: grid;
 }
 
 .book-form__field input {
-  border-radius: 8px;
   border: 1px solid gainsboro;
+  border-radius: 8px;
   padding: 8px 16px;
   outline-color: #c86a6e;
 }
@@ -147,59 +193,22 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
 .book-form__checkbox input {
-  background: #c86a6e;
   accent-color: #c86a6e;
 }
 
-.book-form__title {
-  -ms-grid-column-align: center;
-      justify-self: center;
-}
-
 .book-form__submit {
-  background: #c86a6e;
-  color: white;
   width: 90px;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
-  cursor: pointer;
   -ms-grid-column-align: center;
       justify-self: center;
-}
-
-.add-book {
-  position: fixed;
-  font-size: 1.8rem;
-  border: none;
-  width: 60px;
-  height: 60px;
   background: #c86a6e;
   color: white;
-  border-radius: 50%;
-  bottom: 5%;
-  right: 5%;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  pointer-events: none;
-  opacity: 0;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
 }
 /*# sourceMappingURL=style.css.map */
